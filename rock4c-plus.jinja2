@@ -1,0 +1,16 @@
+{# device_type = "rock4c-plus" #}
+{% extends 'base-uboot.jinja2' %}
+
+{% set console_device = console_device|default('ttyUSB0') %}
+{% set baud_rate = baud_rate|default(1500000) %}
+{% set boot_character_delay = boot_character_delay | default(10) %}
+{% set bootloader_prompt = bootloader_prompt|default('U-Boot') %}
+{% set booti_kernel_addr = '0x800800' %}
+{% set booti_ramdisk_addr = '0x3000000' %}
+{% set booti_dtb_addr = '0x4000000' %}
+{% set bootm_kernel_addr = booti_kernel_addr %}
+{% set bootm_ramdisk_addr = booti_ramdisk_addr %}
+{% set bootm_dtb_addr = booti_dtb_addr %}
+{% set usb_uuid = usb_uuid|default('') %}
+{% set usb_device_id = usb_device_id|default('') %}
+{% set uboot_mkimage_arch = 'arm' %}
